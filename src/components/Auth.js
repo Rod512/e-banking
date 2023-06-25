@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fragment,useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Auth = () => {
     const [email, setEmail] = useState('');
@@ -29,13 +30,13 @@ const Auth = () => {
             <input className="mr-1" type="checkbox" />
             <span>Remember Me</span>
           </label>
-          <a className="text-blue-600 hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">Forgot Password?</a>
+          <Link className="text-blue-600 hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">Forgot Password?</Link>
         </div>
         <div className="text-center md:text-left">
           <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={push_on}>Login</button>
         </div>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
-          Don't have an account? <a className="text-red-600 hover:underline hover:underline-offset-4" href="#">Register</a>
+          Don't have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" href="#">Register</Link>
         </div>
       </div>
     </section>
