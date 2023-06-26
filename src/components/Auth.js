@@ -1,16 +1,32 @@
 import React from 'react';
 import { Fragment,useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import Account from './Account';
 const Auth = () => {
     const [email, setEmail] = useState('');
     const [password,setPassword]=useState('')
 
-    const push_on = ()=>{
-        localStorage.setItem("email",email)
-        localStorage.setItem("password",password)
+
+    const validity = (e) =>{
+      e.preventDefault()
+
+      let get_email = localStorage.getItem("user_email")
+      let get_password = localStorage.getItem("user_password")
+
+      if(email === get_email && password === get_password){
+         alert('login success')
+      }else{
+        if(email!==get_email){
+          alert('your mail is wrong')
+        }
+        else{
+          alert('your passowrd is wronge')
+        }
+      }
+      
     }
 
+    
     return (
         <Fragment>
         <section className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
@@ -33,10 +49,10 @@ const Auth = () => {
           <Link className="text-blue-600 hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">Forgot Password?</Link>
         </div>
         <div className="text-center md:text-left">
-          <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={push_on}>Login</button>
+          <button className="mt-4 bg-blue-600 hover:bg-blue-700 px-4 py-2 text-white uppercase rounded text-xs tracking-wider" type="submit" onClick={validity}>Login</button>
         </div>
         <div className="mt-4 font-semibold text-sm text-slate-500 text-center md:text-left">
-          Don't have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" href="#">Register</Link>
+          Don't have an account? <Link className="text-red-600 hover:underline hover:underline-offset-4" to={'/register'}>Register</Link>
         </div>
       </div>
     </section>
