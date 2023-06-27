@@ -1,11 +1,9 @@
 import React from 'react';
 import { Fragment,useState } from 'react';
 import { Link } from 'react-router-dom';
-import Account from './Account';
 const Auth = () => {
     const [email, setEmail] = useState('');
     const [password,setPassword]=useState('')
-
 
     const validity = (e) =>{
       e.preventDefault()
