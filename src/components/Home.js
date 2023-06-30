@@ -3,6 +3,7 @@ import img from '../img/e-banking.png'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    
     return (
         <Fragment>
             <div className="h-screen flex flex-col md:flex-row justify-center space-y-10 md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0 lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">

@@ -20,7 +20,7 @@ const Account = () => {
 
     }
 
-    
+    let balance = (0 + deposite_money) - withdraw_money
     return (
         <Fragment>
             <div className='my-2 mx-5 md:mx-0 md:my-0 lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4 '>
@@ -35,7 +35,7 @@ const Account = () => {
                 <div className='grid lg:grid-cols-3 gap-10 text-center mt-20'>
                      <div className='border py-10 bg-cyan-500 font-bold text-white rounded-md'>
                         <h3>Total balance</h3>
-                        <p>100$</p>
+                        <p> <span dangerouslySetInnerHTML={{__html:balance}}></span> $</p>
                      </div>
 
                      <div className='border py-10 bg-rose-500 font-bold text-white rounded-md'>
